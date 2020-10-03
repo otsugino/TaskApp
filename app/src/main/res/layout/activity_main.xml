@@ -8,10 +8,24 @@
     android:fitsSystemWindows="true"
     tools:context=".MainActivity">
 
+    <SearchView
+        android:id="@+id/search1"
+        android:layout_width="match_parent"
+        android:layout_height="32dp"
+        android:background="#d3d3d3"
+        android:queryHint="カテゴリー検索部分一致"
+        android:layoutDirection="rtl"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        />
+
     <ListView
         android:id="@+id/listView1"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"/>
+        android:layout_height="match_parent"
+        android:layout_below="@+id/search1"
+        android:layout_marginTop="32dp"/>
 
     <android.support.design.widget.FloatingActionButton
         android:id="@+id/fab"
