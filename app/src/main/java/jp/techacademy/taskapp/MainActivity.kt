@@ -140,8 +140,7 @@ class MainActivity : AppCompatActivity(){
         })
 
     }
-
-
+    
     private fun reloadListView() {
         // Realmデータベースから、「全てのデータを取得して新しい日時順に並べた結果」を取得
 
