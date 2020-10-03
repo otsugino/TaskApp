@@ -110,17 +110,7 @@ class MainActivity : AppCompatActivity(){
                     val search_category = search1.query.toString()
 
                 Log.d("TaskApp", search_category)
-                if(search_category == ""){
-                    val taskRealmResults = mRealm.where(Task::class.java).findAll().sort("date", Sort.DESCENDING)
-                    // 上記の結果を、TaskList としてセットする
-                    mTaskAdapter.taskList = mRealm.copyFromRealm(taskRealmResults)
 
-                    // TaskのListView用のアダプタに渡す
-                    listView1.adapter = mTaskAdapter
-
-                    // 表示を更新するために、アダプターにデータが変更されたことを知らせる
-                    mTaskAdapter.notifyDataSetChanged()
-                }else {
                     val taskRealmResults =
                         mRealm.where(Task::class.java).contains("category", search_category)
                             .findAll().sort("date", Sort.DESCENDING)
@@ -132,7 +122,7 @@ class MainActivity : AppCompatActivity(){
 
                     // 表示を更新するために、アダプターにデータが変更されたことを知らせる
                     mTaskAdapter.notifyDataSetChanged()
-                }
+
 
                 // submit button pressed
                 return true
@@ -140,7 +130,7 @@ class MainActivity : AppCompatActivity(){
         })
 
     }
-    
+
     private fun reloadListView() {
         // Realmデータベースから、「全てのデータを取得して新しい日時順に並べた結果」を取得
 
